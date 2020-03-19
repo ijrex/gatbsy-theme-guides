@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "eslint-config-airbnb",
+    "eslint-config-prettier",
+    "eslint-config-prettier/react"
+  ],
+  "plugins": ["eslint-plugin-prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
+}

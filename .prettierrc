@@ -1,0 +1,8 @@
+{
+  "endOfLine": "lf",
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "consistent",
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
