@@ -51,3 +51,25 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId }, options) => {
     },
   })
 }
+
+exports.createResolvers = ({ createResolvers }) => {
+  createResolvers({
+    GuidePage: {
+      body: {
+        type: 'String!',
+        resolve: (source, args, context, info) => {
+          // Load the resolver for the `Mdx` type `body` field
+          const type = info.schema.getType('Mdx')
+          const mdxFields = type.getFields()
+          const resolver = mdxFields.body.resolve
+
+          const mdxNode = context.nodeModel.getNodeById({ id: source.parent })
+
+          return resolver(mdxNode, args, context, {
+            fieldName: 'body',
+          })
+        },
+      },
+    },
+  })
+}
