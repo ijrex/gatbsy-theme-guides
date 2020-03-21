@@ -73,3 +73,32 @@ exports.createResolvers = ({ createResolvers }) => {
     },
   })
 }
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    query {
+      allGuidePage {
+        nodes {
+          id
+          path
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panic('error loading guides', result.errors)
+  }
+
+  const pages = result.data.allGuidePage.nodes
+
+  pages.forEach(page => {
+    actions.createPage({
+      path: page.path,
+      component: require.resolve('./src/templates/guide-page-template.js'),
+      context: {
+        pageID: page.id,
+      },
+    })
+  })
+}
