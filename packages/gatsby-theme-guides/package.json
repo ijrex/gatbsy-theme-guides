@@ -8,12 +8,14 @@
     "@mdx-js/react": "^1.5.7",
     "gatsby-plugin-mdx": "^1.0.84",
     "gatsby-source-filesystem": "^2.1.57",
-    "mkdirp": "^1.0.3"
+    "mdx-utils": "^0.2.0",
+    "mkdirp": "^1.0.3",
+    "prism-react-renderer": "^1.0.2"
   },
   "peerDependencies": {
     "gatsby": "^2.19.49",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "prop-types": "^15.7.2"
+    "react-dom": "^16.13.1"
   }
 }
