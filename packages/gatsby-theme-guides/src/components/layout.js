@@ -1,11 +1,16 @@
-import React from 'react'
+/** @jsx jsx */
+
 import PropTypes from 'prop-types'
+import { jsx } from 'theme-ui'
+import React from 'react'
 
 const Layout = ({ children }) => (
-  <>
-    <header>gatsby-theme-docs</header>
-    <main>{children}</main>
-  </>
+  <React.Fragment>
+    <header sx={{ p: 4, bg: 'primary', color: 'background' }}>
+      gatsby-theme-docs
+    </header>
+    <main sx={{ p: 4 }}>{children}</main>
+  </React.Fragment>
 )
 
 export default Layout
