@@ -3,9 +3,11 @@
 import PropTypes from 'prop-types'
 import { jsx } from 'theme-ui'
 import React from 'react'
+import { Global } from '@emotion/core'
 
 const Layout = ({ children }) => (
   <React.Fragment>
+    <Global styles={{ body: { margin: 0 } }} />
     <header sx={{ p: 4, bg: 'primary', color: 'background' }}>
       gatsby-theme-docs
     </header>
