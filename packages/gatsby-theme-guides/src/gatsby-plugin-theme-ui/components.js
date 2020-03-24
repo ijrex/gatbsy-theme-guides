@@ -1,13 +1,5 @@
----
-title: Code Test
----
-
-These are docs!
-
-```js
 import Code from '../components/code'
 
 export default {
   pre: Code,
 }
-```

@@ -1,7 +1,9 @@
-import React from 'react'
+/** @jsx jsx */
+
+import { jsx } from 'theme-ui'
 import { preToCodeBlock } from 'mdx-utils'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-// import theme from 'prism-react-renderer/themes/nightOwl'
+import theme from 'prism-react-renderer/themes/vsDark'
 
 const Code = props => {
   const codeProps = preToCodeBlock(props)
@@ -19,10 +21,16 @@ const Code = props => {
       {...defaultProps}
       code={codeString}
       language={language}
-      // theme={theme}
+      theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <pre
+          className={className}
+          style={style}
+          sx={{
+            p: 3,
+          }}
+        >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
