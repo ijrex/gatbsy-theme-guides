@@ -4,6 +4,7 @@ import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from './layout'
+import TableOfContents from './table-of-contents'
 
 const GuidePage = ({ page }) => (
   <Layout>
@@ -18,6 +19,7 @@ const GuidePage = ({ page }) => (
     >
       This page was updated {page.updated}.
     </p>
+    <TableOfContents />
   </Layout>
 )
 
