@@ -13,7 +13,7 @@ const Header = ({ children }) => {
         sx={{
           float: 'right',
         }}
-        onClick={e => {
+        onClick={() => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default')
         }}
       >
