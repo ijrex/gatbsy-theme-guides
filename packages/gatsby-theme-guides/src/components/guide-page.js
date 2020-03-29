@@ -2,14 +2,23 @@
 
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
+import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from './layout'
 import TableOfContents from './table-of-contents'
 
+import Code from './code'
+
+const components = {
+  pre: Code,
+}
+
 const GuidePage = ({ page }) => (
   <Layout>
     <h1>{page.title}</h1>
-    <MDXRenderer>{page.body}</MDXRenderer>
+    <MDXProvider components={components}>
+      <MDXRenderer>{page.body}</MDXRenderer>
+    </MDXProvider>
     <p
       sx={{
         color: 'muted',
