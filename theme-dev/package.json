@@ -10,8 +10,10 @@
   "dependencies": {
     "gatsby": "^2.19.49",
     "gatsby-theme-guides": "*",
+    "gatsby-theme-switch-ui": "*",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.3.1"
   }
 }
