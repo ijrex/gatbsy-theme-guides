@@ -20,7 +20,7 @@ const Header = ({ children }) => {
         }
       `}
       render={data => (
-        <header sx={{ p: 3, bg: 'primary', color: 'background' }}>
+        <header sx={{ p: 3, color: 'primary' }}>
           <h1>{data.site.siteMetadata.title}</h1>
           <button
             type="button"
