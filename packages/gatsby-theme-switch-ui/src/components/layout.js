@@ -17,11 +17,14 @@ const Layout = ({ children }) => (
       <div
         sx={{
           height: ['auto', '100vh'],
-          flexGrow: ['100%', '300px'],
+          width: ['100%', '300px'],
           position: ['relative', 'sticky'],
           top: 0,
           borderBottom: ['1px solid white', 'none'],
-          borderRight: ['none', '1px solid white'],
+          borderRight: theme => [
+            'none',
+            `${theme.borders.thin} solid ${theme.colors.primary}`,
+          ],
         }}
       >
         <Header>

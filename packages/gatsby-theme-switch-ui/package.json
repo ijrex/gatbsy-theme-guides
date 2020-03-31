@@ -7,6 +7,7 @@
     "@emotion/core": "^10.0.28",
     "@mdx-js/react": "^1.5.7",
     "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "theme-ui": "^0.3.1"
   },
   "peerDependencies": {

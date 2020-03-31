@@ -21,17 +21,28 @@ const Header = ({ children }) => {
       `}
       render={data => (
         <header sx={{ p: 3, color: 'primary' }}>
-          <h1>{data.site.siteMetadata.title}</h1>
+          <h1
+            sx={{
+              fontSize: 6,
+              fontWeight: 'heading',
+              lineHeight: 'heading',
+              wordWrap: 'break-word',
+            }}
+          >
+            &lt;/&gt;
+            <br />
+            {data.site.siteMetadata.title}
+          </h1>
           <button
             type="button"
             sx={{
               float: 'right',
             }}
             onClick={() => {
-              setColorMode(colorMode === 'default' ? 'dark' : 'default')
+              setColorMode(colorMode === 'default' ? 'light' : 'default')
             }}
           >
-            Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
+            Toggle {colorMode === 'default' ? 'Light' : 'Dark'}
           </button>
           <button
             type="button"
