@@ -2,12 +2,11 @@
 
 import PropTypes from 'prop-types'
 import { jsx, useColorMode } from 'theme-ui'
-import { useState } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import Nav from './nav'
 
 const Header = ({ children }) => {
   const [colorMode, setColorMode] = useColorMode()
-  const [menuToggle, setMenuToggle] = useState(false)
   return (
     <StaticQuery
       query={graphql`
@@ -44,15 +43,8 @@ const Header = ({ children }) => {
           >
             Toggle {colorMode === 'default' ? 'Light' : 'Dark'}
           </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMenuToggle(!menuToggle)
-            }}
-          >
-            Show/Hide Menu
-          </button>
-          {menuToggle ? <div>{children}</div> : <div />}
+          <Nav />
+          {children}
         </header>
       )}
     />

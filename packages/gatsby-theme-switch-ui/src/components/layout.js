@@ -27,9 +27,7 @@ const Layout = ({ children }) => (
           ],
         }}
       >
-        <Header>
-          <p>TODO: Menu goes here</p>
-        </Header>
+        <Header />
       </div>
       <div sx={{ p: 3 }}>
         <main>{children}</main>
