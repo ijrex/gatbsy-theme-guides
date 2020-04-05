@@ -2,25 +2,52 @@
 
 import PropTypes from 'prop-types'
 import { jsx, useColorMode } from 'theme-ui'
+import { StaticQuery, graphql } from 'gatsby'
+import Nav from './nav'
 
 const Header = ({ children }) => {
   const [colorMode, setColorMode] = useColorMode()
   return (
-    <header sx={{ p: 3, bg: 'primary', color: 'background' }}>
-      {' '}
-      <button
-        type="button"
-        sx={{
-          float: 'right',
-        }}
-        onClick={() => {
-          setColorMode(colorMode === 'default' ? 'dark' : 'default')
-        }}
-      >
-        Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
-      </button>
-      {children}
-    </header>
+    <StaticQuery
+      query={graphql`
+        query HeadingQuery {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={data => (
+        <header sx={{ p: 3, color: 'primary' }}>
+          <h1
+            sx={{
+              fontSize: 6,
+              fontWeight: 'heading',
+              lineHeight: 'heading',
+              wordWrap: 'break-word',
+            }}
+          >
+            &lt;/&gt;
+            <br />
+            {data.site.siteMetadata.title}
+          </h1>
+          <button
+            type="button"
+            sx={{
+              float: 'right',
+            }}
+            onClick={() => {
+              setColorMode(colorMode === 'default' ? 'light' : 'default')
+            }}
+          >
+            Toggle {colorMode === 'default' ? 'Light' : 'Dark'}
+          </button>
+          <Nav />
+          {children}
+        </header>
+      )}
+    />
   )
 }
 
